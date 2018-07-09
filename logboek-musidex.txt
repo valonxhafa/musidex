@@ -1,0 +1,14 @@
+- Poging tot Angular 6 maar overgeschakelt naar 5
+- Service worker werkte niet op verschillende http-server adressen, moest op HTTPS op adres 127.xxx...
+- Tweede ngModule voor material componenten
+- Lighthouse plugin om score in de gaten te houden.
+- Angular material ook adapten naar angular versie
+
+Nice to have:
+App shell voor startup performance
+
+
+
+Bronnen
+
+https://blog.angular-university.io/angular-app-shell/
