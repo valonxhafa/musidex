@@ -1,27 +1,47 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <title>Musidex</title>
   <base href="/">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+
   <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
+
 <body>
-  <app-root></app-root>
+  <app-root>
+    <div class="spinner">
+      <div class="cube1"></div>
+      <div class="cube2"></div>
+    </div>
+
+  </app-root>
+
+  <noscript>
+    <h3 style="color: #673ab7; font-family: Helvetica; margin: 2rem;">
+      Sorry, but app is not available without javascript
+    </h3>
+  </noscript>
+  
   <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"></script>
-<script>
-  // Initialize Firebase
-  var config = {
-    apiKey: "AIzaSyAbDdFck4_7UzMzI-70LxMN6eTsByN18rs",
-    authDomain: "musidexdb.firebaseapp.com",
-    databaseURL: "https://musidexdb.firebaseio.com",
-    projectId: "musidexdb",
-    storageBucket: "musidexdb.appspot.com",
-    messagingSenderId: "881462340168"
-  };
-  firebase.initializeApp(config);
-</script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyAbDdFck4_7UzMzI-70LxMN6eTsByN18rs",
+      authDomain: "musidexdb.firebaseapp.com",
+      databaseURL: "https://musidexdb.firebaseio.com",
+      projectId: "musidexdb",
+      storageBucket: "musidexdb.appspot.com",
+      messagingSenderId: "881462340168"
+    };
+    firebase.initializeApp(config);
+  </script>
+
 </body>
+
 </html>
