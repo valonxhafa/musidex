@@ -7,7 +7,9 @@ import { AppComponent } from './app.component';
 import { environment } from '../environments/environment';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { AppMaterialModule } from './app-material/app-material.module';
-import {MatToolbarModule} from '@angular/material/toolbar';
+import {LayoutModule} from '@angular/cdk/layout';
+import {AngularFirestoreModule} from 'angularfire2/firestore'
+import { AngularFireModule } from 'angularfire2';
 
 @NgModule({
   declarations: [
@@ -18,6 +20,8 @@ import {MatToolbarModule} from '@angular/material/toolbar';
     BrowserAnimationsModule,
     ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production }),
     AppMaterialModule,
+    LayoutModule,
+    AngularFirestoreModule
   ],
   providers: [],
   bootstrap: [AppComponent]
