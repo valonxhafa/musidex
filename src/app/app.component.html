@@ -21,5 +21,9 @@
           <h2>HERE IS A FUCKING BUTTON</h2>
           <button mat-button>Click me!</button>
 
+          <div *ngFor="let artist of artists | async">
+              <h3>{{artist | json}}</h3>
+          </div>
+
         </div></mat-sidenav-content>
 </mat-sidenav-container>

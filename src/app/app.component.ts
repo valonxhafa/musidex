@@ -23,12 +23,14 @@ interface Artist {
 export class AppComponent implements OnInit {
   opened: boolean;
   title = 'Musidex';
-  artistsCollection: AngularFirestoreCollection;
+  artistsCollection: AngularFirestoreCollection<Artist>;
+  artists: Observable<Artist[]>;
 
 
-  constructor() {}
+  constructor(private afs: AngularFirestore) {}
 
   ngOnInit() {
-
+    this.artistsCollection = this.afs.collection('artists');
+    this.artists = this.artistsCollection.valueChanges();
   }
 }
