@@ -6,6 +6,7 @@
 
 Nice to have:
 App shell voor startup performance
+Shazam integratie
 
 
 
