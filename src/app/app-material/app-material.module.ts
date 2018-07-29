@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatInputModule, MatButtonModule, MatCheckboxModule, MatToolbarModule } from '@angular/material';
 import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
 
 @NgModule({
   imports: [
@@ -10,14 +11,16 @@ import {MatSidenavModule} from '@angular/material/sidenav';
     MatButtonModule,
     MatCheckboxModule,
     MatSidenavModule,
-    MatToolbarModule
+    MatToolbarModule,
+    MatAutocompleteModule
   ],
   exports: [
     MatInputModule,
     MatButtonModule,
     MatCheckboxModule,
     MatSidenavModule,
-    MatToolbarModule
+    MatToolbarModule,
+    MatAutocompleteModule
   ],
   declarations: []
 })

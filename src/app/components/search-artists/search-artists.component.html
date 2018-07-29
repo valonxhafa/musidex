@@ -1,0 +1,17 @@
+<form class="example-form">
+  <mat-form-field class="example-full-width">
+    <input type="text" placeholder="Search an artist" aria-label="Number" matInput [formControl]="stateCtrl" [matAutocomplete]="auto">
+    <mat-autocomplete #auto="matAutocomplete">
+      <mat-option *ngFor="let option of options" [value]="option">
+        {{option}}
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>
+</form>
+
+<div *ngFor="let artist of artistsObs | async">
+  <h3>{{artist.artistname | json}}</h3>
+  <h3>{{artist.forname | json}}</h3>
+  <h3>{{artist.name | json}}</h3>
+  <br>
+</div>

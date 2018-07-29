@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { HttpClientModule } from '@angular/common/http';
 import { environment } from '../environments/environment';
@@ -11,16 +12,20 @@ import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { AngularFireDatabaseModule } from 'angularFire2/database';
 import { AppMaterialModule } from './app-material/app-material.module';
 import { LayoutModule } from '@angular/cdk/layout';
+import { SearchArtistsComponent } from './components/search-artists/search-artists.component';
 
 export const firebaseConfig = environment.firebaseConfig;
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    SearchArtistsComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    FormsModule,
+    ReactiveFormsModule,
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFirestoreModule.enablePersistence(),
     AngularFirestoreModule,
