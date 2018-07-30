@@ -1,5 +1,6 @@
 export class Artist {
-    artistname: string;
-    forname: string;
-    name: string;
+    $key?: string;
+    artistname?: string;
+    forname?: string;
+    name?: string;
 }

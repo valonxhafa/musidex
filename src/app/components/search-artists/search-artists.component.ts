@@ -8,12 +8,9 @@ import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 import { FormControl } from '@angular/forms';
 import { ArtistsService } from '../../services/artists.service';
-
-interface Artist {
-  artistname: string;
-  forname: string;
-  name: string;
-}
+import { element } from 'protractor';
+import { AngularFireDatabase } from '../../../../node_modules/angularFire2/database';
+import { Artist } from '../../models/artist';
 
 @Component({
   selector: 'app-search-artists',
@@ -22,21 +19,21 @@ interface Artist {
   providers: [ArtistsService]
 })
 export class SearchArtistsComponent implements OnInit {
+
   public options: string[] = ['One', 'Two', 'Three'];
 
-  artistsCollection: AngularFirestoreCollection<Artist>;
-  artistsObs: Observable<Artist[]>;
-  stateCtrl = new FormControl();
+  artists: Artist[];
+  // private artistCollection: AngularFirestoreCollection<Artist>;
 
-  constructor(private afs: AngularFirestore) {
-    this.artistsCollection = this.afs.collection('Artists');
-    this.artistsObs = this.artistsCollection.valueChanges();
+
+  constructor(public artistsService: ArtistsService) {
   }
 
   ngOnInit() {
-  }
+    this.artistsService.getArtists().subscribe(res => {
+      this.artists = res;
+    });
 
-  public getArtists() {
   }
 
 }

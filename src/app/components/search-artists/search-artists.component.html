@@ -9,9 +9,9 @@
   </mat-form-field>
 </form>
 
-<div *ngFor="let artist of artistsObs | async">
+
+<div *ngFor="let artist of artists">
   <h3>{{artist.artistname | json}}</h3>
-  <h3>{{artist.forname | json}}</h3>
-  <h3>{{artist.name | json}}</h3>
+
   <br>
 </div>
