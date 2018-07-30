@@ -23,8 +23,6 @@ export class ArtistsService {
         return data;
       });
     });
-
-   // this.artists = this.artistCollection.valueChanges();
   }
 
   public getArtists() {

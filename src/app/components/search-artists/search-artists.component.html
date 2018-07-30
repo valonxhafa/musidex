@@ -1,17 +1,43 @@
 <form class="example-form">
-  <mat-form-field class="example-full-width">
-    <input type="text" placeholder="Search an artist" aria-label="Number" matInput [formControl]="stateCtrl" [matAutocomplete]="auto">
-    <mat-autocomplete #auto="matAutocomplete">
-      <mat-option *ngFor="let option of options" [value]="option">
-        {{option}}
-      </mat-option>
-    </mat-autocomplete>
-  </mat-form-field>
+  <img width="30px" src="./../../../assets/images/search.png">
+
+
+    <mat-form-field class="example-full-width">
+      <input type="text" placeholder="Search an artist" aria-label="Number" matInput [formControl]="searchArtistCtrl" [matAutocomplete]="auto">
+      <mat-autocomplete #auto="matAutocomplete">
+        <mat-option *ngFor="let artist of artists" [value]="artist">
+          {{artist.artistname}}
+        </mat-option>
+      </mat-autocomplete>
+    </mat-form-field>
+
 </form>
 
+<div id="card-container">
+  <div *ngFor="let artist of artists">
+    <mat-card class="example-card">
+      <mat-card-header>
+        <!--<div mat-card-avatar class="example-header-image"></div>-->
+        <!--<mat-card-title>{{artist.artistname}}</mat-card-title>-->
+        <mat-card-subtitle>{{artist.forname}} {{artist.name}}</mat-card-subtitle>
+      </mat-card-header>
+      <img mat-card-image src="{{artist.imgurl}}" alt="{{artist.name}}">
+      <mat-card-content>
+        <p align="left">
+          The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
+          A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
+          bred for hunting.
+        </p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-button>Biography</button>
+        <button mat-button>Discography</button>
+      </mat-card-actions>
+    </mat-card>
+</div>
 
-<div *ngFor="let artist of artists">
-  <h3>{{artist.artistname | json}}</h3>
+
+  <!--<h3>{{artist.artistname | json}}</h3>-->
 
   <br>
 </div>

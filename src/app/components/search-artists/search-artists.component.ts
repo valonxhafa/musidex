@@ -1,16 +1,9 @@
-import { Component, ChangeDetectorRef, OnInit } from '@angular/core';
-
-import {
-  AngularFirestore,
-  AngularFirestoreCollection
-} from 'angularfire2/firestore';
-import { Observable } from 'rxjs/Observable';
+import { Component, OnInit } from '@angular/core';
 import 'rxjs/add/operator/map';
 import { FormControl } from '@angular/forms';
 import { ArtistsService } from '../../services/artists.service';
-import { element } from 'protractor';
-import { AngularFireDatabase } from '../../../../node_modules/angularFire2/database';
 import { Artist } from '../../models/artist';
+import {Observable} from 'rxjs/Observable';
 
 @Component({
   selector: 'app-search-artists',
@@ -19,21 +12,24 @@ import { Artist } from '../../models/artist';
   providers: [ArtistsService]
 })
 export class SearchArtistsComponent implements OnInit {
-
-  public options: string[] = ['One', 'Two', 'Three'];
-
+  private _searchArtistCtrl = new FormControl();
   artists: Artist[];
-  // private artistCollection: AngularFirestoreCollection<Artist>;
-
+  filteredOptions: Observable<Artist[]>;
 
   constructor(public artistsService: ArtistsService) {
   }
 
   ngOnInit() {
+    this.getArtists();
+  }
+
+  getArtists() {
     this.artistsService.getArtists().subscribe(res => {
       this.artists = res;
     });
-
   }
 
+  get searchArtistCtrl(): FormControl {
+    return this._searchArtistCtrl;
+  }
 }
