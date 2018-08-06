@@ -3,6 +3,8 @@
 - Tweede ngModule voor material componenten
 - Lighthouse plugin om score in de gaten te houden.
 - Angular material ook adapten naar angular versie
+- Flex layout downgraden naar specifieke versie want laatste flex layout geeft fout versie met angular/core packages enz
+  -> https://github.com/angular/flex-layout/issues/494#issuecomment-343355178
 
 Nice to have:
 App shell voor startup performance

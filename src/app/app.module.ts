@@ -13,13 +13,32 @@ import { AngularFireDatabaseModule } from 'angularFire2/database';
 import { AppMaterialModule } from './app-material/app-material.module';
 import { LayoutModule } from '@angular/cdk/layout';
 import { SearchArtistsComponent } from './components/search-artists/search-artists.component';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { RouterModule, Routes } from '@angular/router';
+import { ViewArtistComponent } from './components/view-artist/view-artist.component';
 
 export const firebaseConfig = environment.firebaseConfig;
+
+const appRoutes: Routes = [
+  // { path: 'crisis-center', component: CrisisListComponent },
+  // { path: 'hero/:id',      component: HeroDetailComponent },
+  // {
+  //   path: 'heroes',
+  //   component: HeroListComponent,
+  //   data: { title: 'Heroes List' }
+  // },
+  // { path: '',
+  //   redirectTo: '/heroes',
+  //   pathMatch: 'full'
+  // },
+  // { path: '**', component: PageNotFoundComponent }
+];
 
 @NgModule({
   declarations: [
     AppComponent,
-    SearchArtistsComponent
+    SearchArtistsComponent,
+    ViewArtistComponent
   ],
   imports: [
     BrowserModule,
@@ -34,7 +53,9 @@ export const firebaseConfig = environment.firebaseConfig;
     HttpClientModule,
     ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production }),
     AppMaterialModule,
-    LayoutModule
+    LayoutModule,
+    FlexLayoutModule,
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [],
   bootstrap: [AppComponent]

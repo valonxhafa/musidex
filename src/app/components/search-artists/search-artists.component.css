@@ -1,20 +1,15 @@
 .example-card {
   max-width: 300px;
   margin-left: 20%;
+  margin-bottom: 10%;
 }
 
 .matInput{
   width: 60%;
 }
 
-#card-container {
-  display: flex;
-  flex-flow: row wrap;
-  position: center;
-}
-
 .mat-card-image {
-  height: 200px;
+  width: 100%;
 }
 
 .mat-form-field {
