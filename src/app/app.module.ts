@@ -20,8 +20,7 @@ import { ViewArtistComponent } from './components/view-artist/view-artist.compon
 export const firebaseConfig = environment.firebaseConfig;
 
 const appRoutes: Routes = [
-  // { path: 'crisis-center', component: CrisisListComponent },
-  // { path: 'hero/:id',      component: HeroDetailComponent },
+  { path: 'viewartist', component: ViewArtistComponent }
   // {
   //   path: 'heroes',
   //   component: HeroListComponent,
