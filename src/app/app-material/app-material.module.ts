@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import {MatInputModule, MatButtonModule, MatCheckboxModule, MatToolbarModule, MatCardModule} from '@angular/material';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
+import {MatDividerModule} from '@angular/material/divider';
+import {MatListModule} from '@angular/material/list';
 
 @NgModule({
   imports: [
@@ -13,7 +15,9 @@ import {MatAutocompleteModule} from '@angular/material/autocomplete';
     MatSidenavModule,
     MatToolbarModule,
     MatAutocompleteModule,
-    MatCardModule
+    MatCardModule,
+    MatDividerModule,
+    MatListModule
   ],
   exports: [
     MatInputModule,
@@ -22,7 +26,9 @@ import {MatAutocompleteModule} from '@angular/material/autocomplete';
     MatSidenavModule,
     MatToolbarModule,
     MatAutocompleteModule,
-    MatCardModule
+    MatCardModule,
+    MatDividerModule,
+    MatListModule
   ],
   declarations: []
 })

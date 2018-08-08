@@ -16,11 +16,14 @@ import { SearchArtistsComponent } from './components/search-artists/search-artis
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { RouterModule, Routes } from '@angular/router';
 import { ViewArtistComponent } from './components/view-artist/view-artist.component';
+import { SidenavListComponent } from './components/sidenav-list/sidenav-list.component';
 
 export const firebaseConfig = environment.firebaseConfig;
 
 const appRoutes: Routes = [
-  { path: 'viewartist', component: ViewArtistComponent }
+  { path: 'search-artist', component: SearchArtistsComponent },
+  { path: 'view-artist', component: ViewArtistComponent },
+  { path: '', component: SearchArtistsComponent }
   // {
   //   path: 'heroes',
   //   component: HeroListComponent,
@@ -37,7 +40,8 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
     SearchArtistsComponent,
-    ViewArtistComponent
+    ViewArtistComponent,
+    SidenavListComponent
   ],
   imports: [
     BrowserModule,
