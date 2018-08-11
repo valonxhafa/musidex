@@ -5,6 +5,8 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatListModule} from '@angular/material/list';
+import {MatGridListModule} from '@angular/material/grid-list';
+
 
 @NgModule({
   imports: [
@@ -17,7 +19,8 @@ import {MatListModule} from '@angular/material/list';
     MatAutocompleteModule,
     MatCardModule,
     MatDividerModule,
-    MatListModule
+    MatListModule,
+    MatGridListModule
   ],
   exports: [
     MatInputModule,
@@ -28,7 +31,8 @@ import {MatListModule} from '@angular/material/list';
     MatAutocompleteModule,
     MatCardModule,
     MatDividerModule,
-    MatListModule
+    MatListModule,
+    MatGridListModule
   ],
   declarations: []
 })

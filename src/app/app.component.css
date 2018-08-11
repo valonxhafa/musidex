@@ -65,3 +65,7 @@
 .mat-sidenav {
   width: 10%;
 }
+
+input:focus {
+  outline:none;
+}
