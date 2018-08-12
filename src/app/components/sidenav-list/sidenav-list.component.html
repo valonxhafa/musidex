@@ -11,13 +11,19 @@
   <mat-divider></mat-divider>
 </mat-list> -->
 <h3 mat-subheader>Sort</h3>
-<mat-grid-list cols="1" rowHeight="80px">
+<mat-grid-list cols="2" row="6" rowHeight="60px">
     <mat-grid-tile
-        *ngFor="let tile of tiles"
-        [colspan]="tile.cols"
-        [rowspan]="tile.rows"
-        [style.background]="tile.color">
-        <p>
-      {{tile.text}}
-    </mat-grid-tile>
+        *ngFor="let img of filterGenreIconList"
+        [colspan]="1"
+        [rowspan]="1"
+        [style.background]='tilecolor'>
+      
+        <button md-icon-button color="accent" style='height: 100%;width: 100%'> 
+            
+            <img height="40%" src="../assets/icons/{{img}}.png">
+            <p>{{img}}</p>
+            
+        </button>
+        <!-- <input routerLink="" width="70px" type="image" src="../assets/icons/{{img}}.png" alt="{{img}} logo" style='margin-right: 20px;'/> -->
+      </mat-grid-tile>
   </mat-grid-list>

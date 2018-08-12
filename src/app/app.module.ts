@@ -47,6 +47,7 @@ const appRoutes: Routes = [
     BrowserModule,
     BrowserAnimationsModule,
     FormsModule,
+    AppMaterialModule,
     ReactiveFormsModule,
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFirestoreModule.enablePersistence(),
@@ -55,7 +56,6 @@ const appRoutes: Routes = [
     AngularFireModule,
     HttpClientModule,
     ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production }),
-    AppMaterialModule,
     LayoutModule,
     FlexLayoutModule,
     RouterModule.forRoot(appRoutes)
@@ -63,4 +63,4 @@ const appRoutes: Routes = [
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { MatIconRegistry, MatIconModule } from '@angular/material/icon';
+import { DomSanitizer } from '@angular/platform-browser';
 
 export interface Tile {
   color: string;
-  cols: number;
-  rows: number;
   text: string;
 }
 
@@ -14,18 +14,23 @@ export interface Tile {
 })
 export class SidenavListComponent implements OnInit {
 
-  tiles: Tile[] = [
-    {text: 'One', cols: 1, rows: 1, color: 'lightblue'},
-    {text: 'Two', cols: 1, rows: 1, color: 'lightgreen'},
-    {text: 'Three', cols: 1, rows: 1, color: 'lightpink'},
-    {text: 'Four', cols: 1, rows: 1, color: '#DDBDF1'},
-  ];
+  numbre: number;
+  tilecolor = 'lightpink';
 
-  list: number[] = [1, 2, 3];
+  filterYearIconList = ['60w', '70w', '80w', '90w'];
+  filterGenreIconList = ['hiphop', 'rap', 'dance', 'jazz', 'classicw', 'countryw',
+  'electronic', 'metal', 'punk', 'reggae', 'rock', 'usmusic'];
 
-  constructor() { }
+  constructor(private iconRegistry: MatIconRegistry, private domSanitizer: DomSanitizer) {
+  }
 
   ngOnInit() {
+  }
+
+  go() {
+    console.log('waddup');
+    const map = new Map();
+    map.set('name', 'Anand Deep Singh');
   }
 
 }

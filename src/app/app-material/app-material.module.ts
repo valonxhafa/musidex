@@ -6,6 +6,8 @@ import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatListModule} from '@angular/material/list';
 import {MatGridListModule} from '@angular/material/grid-list';
+import {MatIconModule} from '@angular/material/icon';
+
 
 
 @NgModule({
@@ -20,7 +22,8 @@ import {MatGridListModule} from '@angular/material/grid-list';
     MatCardModule,
     MatDividerModule,
     MatListModule,
-    MatGridListModule
+    MatGridListModule,
+    MatIconModule
   ],
   exports: [
     MatInputModule,
@@ -32,8 +35,12 @@ import {MatGridListModule} from '@angular/material/grid-list';
     MatCardModule,
     MatDividerModule,
     MatListModule,
-    MatGridListModule
+    MatGridListModule,
+    MatIconModule
   ],
   declarations: []
 })
-export class AppMaterialModule { }
+
+
+export class AppMaterialModule {
+}
