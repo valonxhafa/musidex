@@ -1,7 +1,5 @@
 <form class="example-form">
   <img width="30px" src="./../../../assets/images/search.png">
-
-
     <mat-form-field class="example-full-width">
       <input type="text" placeholder="Search an artist" aria-label="Number" matInput [formControl]="searchArtistCtrl" [matAutocomplete]="auto">
       <mat-autocomplete #auto="matAutocomplete">
@@ -10,11 +8,9 @@
         </mat-option>
       </mat-autocomplete>
     </mat-form-field>
-
 </form>
-<br>
 
-<div id="card-container" div fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="0.3%" fxLayoutAlign="center">
+<div id="card-container" fxLayout="row" fxLayoutWrap fxLayoutGap="2rem" fxLayoutAlign="center" fxLayout.xs="column">
   <div *ngFor="let artist of artists">
     <mat-card class="example-card">
       <mat-card-header>

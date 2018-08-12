@@ -1,7 +1,8 @@
 .example-card {
   max-width: 300px;
-  margin-bottom: 10%;
-  margin-right: 20%;
+  margin-bottom: 5%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .matInput{
@@ -10,8 +11,13 @@
 
 .mat-card-image {
   width: 100%;
+  height: 220px;
 }
 
 .mat-form-field {
   width: 60%;
+}
+
+#card-container {
+  margin-top : 2%;
 }
