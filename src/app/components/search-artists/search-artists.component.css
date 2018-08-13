@@ -1,5 +1,9 @@
+#card-container {
+  margin-top : 2%;
+}
+
 .example-card {
-  max-width: 300px;
+  max-width: 220px;
   margin-bottom: 5%;
   margin-left: auto;
   margin-right: auto;
@@ -16,8 +20,4 @@
 
 .mat-form-field {
   width: 60%;
-}
-
-#card-container {
-  margin-top : 2%;
 }

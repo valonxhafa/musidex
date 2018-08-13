@@ -28,9 +28,6 @@ export class SidenavListComponent implements OnInit {
   }
 
   go() {
-    console.log('waddup');
-    const map = new Map();
-    map.set('name', 'Anand Deep Singh');
   }
 
 }

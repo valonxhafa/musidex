@@ -10,7 +10,7 @@
     </mat-form-field>
 </form>
 
-<div id="card-container" fxLayout="row" fxLayoutWrap fxLayoutGap="2rem" fxLayoutAlign="center" fxLayout.xs="column">
+<div id="card-container" fxLayout="row" fxLayoutWrap fxLayoutGap="4rem" fxLayoutAlign="center" fxLayout.xs="column">
   <div *ngFor="let artist of artists">
     <mat-card class="example-card">
       <mat-card-header>
@@ -21,13 +21,16 @@
       <img mat-card-image src="{{artist.imgurl}}" alt="{{artist.name}}">
       <mat-card-content>
         <p align="left">
-          The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
+          {{artist.shortdescription}}
+        </p>
+        <p>
+          Tags : 
         </p>
       </mat-card-content>
       <mat-card-actions>
-        <button mat-button>Biography</button>
-        <button mat-button>Discography</button>
-        <a routerLink="/view-artist" routerLinkActive="active">NEXT PAGE</a>
+        <a mat-stroked-button routerLink="." style="margin-right:50px">Bio</a>
+        <a mat-stroked-button routerLink=".">About</a>
+        <!-- <a routerLink="/view-artist" routerLinkActive="active">NEXT PAGE</a> -->
       </mat-card-actions>
     </mat-card>
 </div>

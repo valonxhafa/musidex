@@ -4,4 +4,5 @@ export class Artist {
     forname?: string;
     name?: string;
     imgurl?: string;
+    shortdescription?: string;
 }
