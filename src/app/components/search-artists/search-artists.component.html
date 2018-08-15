@@ -12,7 +12,7 @@
 
 <div id="card-container" fxLayout="row" fxLayoutWrap fxLayoutGap="4rem" fxLayoutAlign="center" fxLayout.xs="column">
   <div *ngFor="let artist of artists">
-    <mat-card class="example-card">
+    <mat-card class="example-card" tabindex="0">
       <mat-card-header>
         <!--<div mat-card-avatar class="example-header-image"></div>-->
         <mat-card-title>{{artist.artistname}}</mat-card-title>
@@ -28,8 +28,8 @@
         </p>
       </mat-card-content>
       <mat-card-actions>
-        <a mat-stroked-button routerLink="." style="margin-right:50px">Bio</a>
-        <a mat-stroked-button routerLink=".">About</a>
+        <a mat-stroked-button routerLink="/artist" routerLinkActive="active" style="margin-right:50px">Bio</a>
+        <a mat-stroked-button routerLink="." routerLinkActive="active">About</a>
         <!-- <a routerLink="/view-artist" routerLinkActive="active">NEXT PAGE</a> -->
       </mat-card-actions>
     </mat-card>

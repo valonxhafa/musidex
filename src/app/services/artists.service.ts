@@ -11,10 +11,16 @@ export class ArtistsService {
 
   artistCollection: AngularFirestoreCollection<Artist>;
   artists: Observable<Artist[]>;
+
   artistDocument: AngularFirestoreDocument<Artist>;
+  artist: Observable<Artist>;
 
   constructor(private afs: AngularFirestore) {
-    this.artistCollection = afs.collection<Artist>('Artists');
+
+  }
+
+  public getArtists() {
+    this.artistCollection = this.afs.collection<Artist>('Artists');
     this.artists = this.artistCollection.snapshotChanges().map(changes => {
       return changes.map(a => {
         const data = a.payload.doc.data() as Artist;
@@ -23,23 +29,23 @@ export class ArtistsService {
       });
     });
 
-    this.getArtist();
-  }
-
-  public getArtists() {
     return this.artists;
   }
 
-  getArtist() {
-    this.artistCollection.doc('M7mvTtd5TsBpqc1CsNUI').ref.get().then(function(doc) {
-      if (doc.exists) {
-        console.log('Document data:', doc.data());
-      } else {
-        console.log('No such document!');
-      }
-    }).catch(function(error) {
-      console.log('Error getting document:', error);
-    });
+  getArtist(id: any) {
+    this.artistDocument = this.afs.doc('Artists/' + id);
+    this.artist = this.artistDocument.valueChanges();
+    return this.artist;
+    // this.artistCollection.doc(id).ref.get().then(function(doc) {
+    //   if (doc.exists) {
+    //     console.log('Document data:', doc.data());
+    //     this.artistDocument = doc.data();
+    //   } else {
+    //     console.log('No such document!');
+    //   }
+    // }).catch(function(error) {
+    //   console.log('Error getting document:', error);
+    // });
   }
 
   deleteArtist(artist: Artist) {

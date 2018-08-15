@@ -21,8 +21,8 @@ import { SidenavListComponent } from './components/sidenav-list/sidenav-list.com
 export const firebaseConfig = environment.firebaseConfig;
 
 const appRoutes: Routes = [
-  { path: 'search-artist', component: SearchArtistsComponent },
-  { path: 'view-artist', component: ViewArtistComponent },
+  { path: 'search', component: SearchArtistsComponent },
+  { path: 'artist', component: ViewArtistComponent },
   { path: '', component: SearchArtistsComponent }
   // {
   //   path: 'heroes',

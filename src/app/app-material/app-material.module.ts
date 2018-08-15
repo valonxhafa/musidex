@@ -7,6 +7,7 @@ import {MatDividerModule} from '@angular/material/divider';
 import {MatListModule} from '@angular/material/list';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatIconModule} from '@angular/material/icon';
+import {MatChipsModule} from '@angular/material/chips';
 
 
 
@@ -23,7 +24,8 @@ import {MatIconModule} from '@angular/material/icon';
     MatDividerModule,
     MatListModule,
     MatGridListModule,
-    MatIconModule
+    MatIconModule,
+    MatChipsModule
   ],
   exports: [
     MatInputModule,
@@ -36,7 +38,8 @@ import {MatIconModule} from '@angular/material/icon';
     MatDividerModule,
     MatListModule,
     MatGridListModule,
-    MatIconModule
+    MatIconModule,
+    MatChipsModule
   ],
   declarations: []
 })

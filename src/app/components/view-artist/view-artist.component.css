@@ -1,0 +1,14 @@
+.general-container {
+    margin : 0% 10%;
+}
+
+.section-container {
+    width : 100%;
+    margin: 0% 0%;
+}
+
+.section-header {
+    border-radius: 10px;
+    border: 2px solid rgb(97, 91, 189);
+    padding: 10px;
+}
