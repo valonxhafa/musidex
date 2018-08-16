@@ -4,6 +4,7 @@ import { FormControl } from '@angular/forms';
 import { ArtistsService } from '../../services/artists.service';
 import { Artist } from '../../models/artist';
 import {Observable} from 'rxjs/Observable';
+import {ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'app-search-artists',
@@ -16,7 +17,8 @@ export class SearchArtistsComponent implements OnInit {
   artists: Artist[];
   filteredOptions: Observable<Artist[]>;
 
-  constructor(public artistsService: ArtistsService) {
+  constructor(public artistsService: ArtistsService, private route: ActivatedRoute) {
+    this.route.params.subscribe( params => console.log(params) );
   }
 
   ngOnInit() {
