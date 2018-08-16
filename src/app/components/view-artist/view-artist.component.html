@@ -1,61 +1,90 @@
-<div class="general-container" >
+<!-- <ui-carousel >
+        <ui-carousel-item>
+    <img style="height: 300px;" src="{{artist.imgurl}}" alt="{{artist.name}}">
+        </ui-carousel-item>
+</ui-carousel> -->
 
-  <div class='header-container'>
 
-      <div id="generalinfo-container" class="section-container">
-          <div class="section-header">
-            Albums
-          </div>
-          
-          <mat-list>
-            <mat-list-item>
-                <mat-chip-list>
-                    <mat-chip color="accent"> LE BILAN</mat-chip> 
-                </mat-chip-list>
-              
-                </mat-list-item>
-            <mat-list-item> Salt </mat-list-item>
-            <mat-list-item> Paprika </mat-list-item>
-           </mat-list>
-        </div>  
 
-  </div>
 
-  <div class='body-container' fxLayout="row" fxLayout.xs="column" >
+<div class="page-container">
+    <div class='header-container'>
 
-      <div id="generalinfo-container" class="section-container">
-          <div class="section-header">
-            Albums
-          </div>
-          
-          <mat-list>
-            <mat-list-item>
-                <mat-chip-list>
-                    <mat-chip color="accent"> LE BILAN</mat-chip> 
-                </mat-chip-list>
-              
-                </mat-list-item>
-            <mat-list-item> Salt </mat-list-item>
-            <mat-list-item> Paprika </mat-list-item>
-           </mat-list>
-        </div>  
-        
-        <div id="albums-container" class="section-container">
+        <div id="generalinfo-container" class="section-container">
             <div class="section-header">
-              Albums
+                Voornaam naam
             </div>
-            
-            <mat-list>
-              <mat-list-item>
-                  <mat-chip-list>
-                      <mat-chip color="accent"> LE BILAN</mat-chip> 
-                  </mat-chip-list>
-                
-                  </mat-list-item>
-              <mat-list-item> Salt </mat-list-item>
-              <mat-list-item> Paprika </mat-list-item>
-             </mat-list>
-          </div> 
+            <div class='body-container' fxLayout="row" fxLayout.xs="column">
 
-  </div> 
-</div>
+                <div id="carousel-container" class="carousel-container">
+                    <ui-carousel [infinite]="true" [fade]="false" [speed]="1500" height="250px" width="100%">
+                        <ui-carousel-item>
+                            <img src="{{artist.imgurl}}" alt="" draggable="false">
+                        </ui-carousel-item>
+                        <ui-carousel-item>
+                            <img src="{{artist.imgurl}}" alt="" draggable="false">
+                        </ui-carousel-item>
+                        <ui-carousel-item>
+                            <img src="{{artist.imgurl}}" alt="" draggable="false">
+                        </ui-carousel-item>
+                    </ui-carousel>
+                </div>
+                <div id="general-container" class="section-container general-container">
+                    <mat-list>
+                        <mat-list-item>
+                            <mat-chip-list>
+                                <mat-chip color="accent"> LE BILAN</mat-chip>
+                            </mat-chip-list>
+
+                        </mat-list-item>
+                        <mat-list-item> Salt </mat-list-item>
+                        <mat-list-item> Paprika </mat-list-item>
+                    </mat-list>
+
+                    <div>
+
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+        <div class='body-container' fxLayout="row" fxLayout.xs="column">
+
+            <div id="albumsa-container" class="section-container">
+                <div class="section-header">
+                    Albums
+                </div>
+
+                <mat-list>
+                    <mat-list-item>
+                        <mat-chip-list>
+                            <mat-chip color="accent"> LE BILAN</mat-chip>
+                        </mat-chip-list>
+
+                    </mat-list-item>
+                    <mat-list-item> Salt </mat-list-item>
+                    <mat-list-item> Paprika </mat-list-item>
+                </mat-list>
+            </div>
+
+            <div id="albums-container" class="section-container">
+                <div class="section-header">
+                    Albums
+                </div>
+
+                <mat-list>
+                    <mat-list-item>
+                        <mat-chip-list>
+                            <mat-chip color="accent"> LE BILAN</mat-chip>
+                        </mat-chip-list>
+
+                    </mat-list-item>
+                    <mat-list-item> Salt </mat-list-item>
+                    <mat-list-item> Paprika </mat-list-item>
+                </mat-list>
+            </div>
+
+        </div>
+    </div>

@@ -17,6 +17,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { RouterModule, Routes } from '@angular/router';
 import { ViewArtistComponent } from './components/view-artist/view-artist.component';
 import { SidenavListComponent } from './components/sidenav-list/sidenav-list.component';
+import { UICarouselModule } from 'ui-carousel';
 
 export const firebaseConfig = environment.firebaseConfig;
 
@@ -58,7 +59,8 @@ const appRoutes: Routes = [
     ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production }),
     LayoutModule,
     FlexLayoutModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    UICarouselModule
   ],
   providers: [],
   bootstrap: [AppComponent]
