@@ -22,7 +22,7 @@ import { UICarouselModule } from 'ui-carousel';
 export const firebaseConfig = environment.firebaseConfig;
 
 const appRoutes: Routes = [
-  { path: '', component: SearchArtistsComponent }
+  { path: '', component: SearchArtistsComponent },
   { path: 'search', component: SearchArtistsComponent },
   { path: 'artist', component: ViewArtistComponent },
   { path: 'artist/:id', component: ViewArtistComponent },

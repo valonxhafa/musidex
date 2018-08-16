@@ -31,5 +31,11 @@ export class ViewArtistComponent implements OnInit {
     });
   }
 
+  checkArtistBeforeImgUrl() {
+    if (this.artist) {
+      return this.artist.imgurl;
+    }
+  }
+
 
 }

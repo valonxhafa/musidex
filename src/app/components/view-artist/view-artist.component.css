@@ -11,6 +11,9 @@
     margin : 2% 0%;
 }
 
+.show-info-right {
+    position: right;
+}
 
 
 .carousel-container {
@@ -19,9 +22,8 @@
 }
 
 .section-header {
-    border-radius: 10px;
-    border: 2px solid rgb(97, 91, 189);
-    padding: 10px;
+    border-radius: 20px;
+    background-color: rgb(247, 241, 242);
 }
 
 :host{

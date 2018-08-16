@@ -12,34 +12,35 @@
 
         <div id="generalinfo-container" class="section-container">
             <div class="section-header">
-                Voornaam naam
+                <h2><b>Passport</b></h2>
             </div>
             <div class='body-container' fxLayout="row" fxLayout.xs="column">
 
-                <div id="carousel-container" class="carousel-container">
-                    <!-- <ui-carousel [infinite]="true" [fade]="false" [speed]="1500" height="250px" width="100%">
+                <div id="carousel-container" class="carousel-container" fxFlexAlign.xs="center" [ngStyle.xs]="{'width.%': 80}">
+                    <ui-carousel style="border-radius: 20px" [autoPlay]="false" [infinite]="true" [fade]="false" [speed]="1500" height="250px" width="100%">
                         <ui-carousel-item>
-                            <img src="{{artist.imgurl}}" alt="" draggable="false">
+                            <img src="{{artist?.imgurl}}" alt="" draggable="false" >
                         </ui-carousel-item>
                         <ui-carousel-item>
-                            <img src="{{artist.imgurl}}" alt="" draggable="false">
+                            <img src="{{artist?.imgurl}}" alt="" draggable="false">
                         </ui-carousel-item>
                         <ui-carousel-item>
-                            <img src="{{artist.imgurl}}" alt="" draggable="false">
+                            <img src="{{artist?.imgurl}}" alt="" draggable="false">
                         </ui-carousel-item>
-                    </ui-carousel> -->
+                    </ui-carousel>
                 </div>
                 <div id="general-container" class="section-container general-container">
                     <mat-list>
-                        <mat-list-item>
-                            <mat-chip-list>
-                                <mat-chip color="accent"> LE BILAN</mat-chip>
-                            </mat-chip-list>
 
+
+                        <mat-list-item><p>Artist name:</p> 
+                            <p class='show-info-right'>Michael Jackson</p>
                         </mat-list-item>
-                        <mat-list-item> Salt </mat-list-item>
-                        <mat-list-item> Paprika </mat-list-item>
-                    </mat-list>
+                        <mat-divider></mat-divider>
+                        <mat-list-item>First name: </mat-list-item>
+                        <mat-divider></mat-divider>
+                        <mat-list-item>Name: </mat-list-item>
+                      </mat-list>
 
                     <div>
 
@@ -60,7 +61,7 @@
                 <mat-list>
                     <mat-list-item>
                         <mat-chip-list>
-                            <mat-chip color="accent"> LE BILAN</mat-chip>
+                            <mat-chip color="accent">CHIPKEN NI BETOELEN</mat-chip>
                         </mat-chip-list>
 
                     </mat-list-item>
