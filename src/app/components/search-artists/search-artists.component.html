@@ -10,7 +10,7 @@
     </mat-form-field>
 </form>
 
-<div id="card-container" fxLayout="row" fxLayoutWrap fxLayoutGap="4rem" fxLayoutAlign="center" fxLayout.xs="column">
+<div id="card-container" fxLayout="row" fxLayoutWrap fxLayoutGap="5%" fxLayoutAlign="center" fxLayout.xs="column">
   <div *ngFor="let artist of artists">
     <mat-card class="example-card" tabindex="0">
       <mat-card-header>
@@ -29,7 +29,7 @@
       </mat-card-content>
       <mat-card-actions>
         <!-- <a mat-stroked-button routerLink="/artist" routerLinkActive="active" style="margin-right:50px">Bio</a> -->
-        <a mat-stroked-button [routerLink]="['/artist', artist.$key]" routerLinkActive="active">About</a>
+        <a mat-raised-button color="primary" [routerLink]="['/artist', artist.$key]" routerLinkActive="active">About</a>
         <!-- <a routerLink="/view-artist" routerLinkActive="active">NEXT PAGE</a> -->
       </mat-card-actions>
     </mat-card>
