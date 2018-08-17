@@ -1,16 +1,5 @@
-<!-- <mat-list>
-  
-  <input routerLink="" width="50px" type="image" src="../assets/images/customlogo.png" alt="Musidex logo" />
-
-  <mat-list-item *ngFor="let item of list">
-     <h4 mat-line>{{item}}</h4> 
-     <p mat-line class="demo-2"> {{item}} </p>
-     <mat-divider [inset]="true" *ngIf="!last"></mat-divider>
-  </mat-list-item>
-   <p>Waddup</p>
-  <mat-divider></mat-divider>
-</mat-list> -->
-<h3 mat-subheader>Sort</h3>
+<h3 mat-subheader style="text-align: center">Sort by genre</h3>
+<mat-divider></mat-divider><br>
 <mat-grid-list cols="2" row="6" rowHeight="60px">
     <mat-grid-tile
         *ngFor="let img of filterGenreIconList"
@@ -24,6 +13,23 @@
             <p>{{img}}</p>
             
         </button>
-        <!-- <input routerLink="" width="70px" type="image" src="../assets/icons/{{img}}.png" alt="{{img}} logo" style='margin-right: 20px;'/> -->
+      </mat-grid-tile>
+  </mat-grid-list>
+
+  <h3 mat-subheader style="text-align: center">Sort by year</h3>
+<mat-divider></mat-divider><br>
+<mat-grid-list cols="2" row="6" rowHeight="60px">
+    <mat-grid-tile
+        *ngFor="let img of filterYearIconList"
+        [colspan]="1"
+        [rowspan]="1"
+        [style.background]='tilecolor'>
+      
+        <button mat-raised-button style='height: 100%;width: 100%'> 
+            
+            <img height="40%" src="../assets/icons/{{img}}.png">
+            <p>{{img}}</p>
+            
+        </button>
       </mat-grid-tile>
   </mat-grid-list>

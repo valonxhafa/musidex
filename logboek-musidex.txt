@@ -7,7 +7,6 @@
   -> https://github.com/angular/flex-layout/issues/494#issuecomment-343355178
 
 Nice to have:
-App shell voor startup performance
 Shazam integratie
 
 
@@ -17,6 +16,8 @@ Bronnen
 PORJECT SETUP
 https://blog.angular-university.io/angular-app-shell/
 https://medium.com/@owencm/designing-great-uis-for-progressive-web-apps-dd38c1d20f7
+https://material.angular.io/
+https://alligator.io/angular/angular-material-custom-theme/
 
 DATA MODELLING:
 https://www.youtube.com/watch?v=jm66TSlVtcc
