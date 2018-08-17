@@ -5,6 +5,10 @@
   position: relative;
 }
 
+.title-center {
+  margin: 0 auto;
+}
+
 .cube1, .cube2 {
   background-color: #333;
   width: 15px;

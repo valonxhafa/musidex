@@ -10,12 +10,12 @@
     </mat-form-field>
 </form>
 
-<div id="card-container" fxLayout="row" fxLayoutWrap fxLayoutGap="5%" fxLayoutAlign="center" fxLayout.xs="column">
+<div id="card-container" fxLayout="row" fxLayoutWrap fxLayoutGap="3%" fxLayoutAlign="center" fxLayout.xs="column">
   <div *ngFor="let artist of artists">
     <mat-card class="example-card" tabindex="0">
       <mat-card-header>
         <!--<div mat-card-avatar class="example-header-image"></div>-->
-        <mat-card-title>{{artist.artistname}}</mat-card-title>
+        <mat-card-title><b>{{artist.artistname}}</b></mat-card-title>
         <!-- <mat-card-subtitle>{{artist.forname}} {{artist.name}}</mat-card-subtitle> -->
       </mat-card-header>
       <img mat-card-image src="{{artist.imgurl}}" alt="{{artist.name}}">

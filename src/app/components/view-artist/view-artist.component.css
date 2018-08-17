@@ -23,13 +23,20 @@
 
 .section-header {
     border-radius: 20px;
-    background-color: rgb(247, 241, 242);
 }
 
 :host{
     display: block;
     width: 100%;
 }
+
+.example-icon {
+    padding: 0 14px;
+  }
+  
+  .example-spacer {
+    flex: 1 1 auto;
+  }
 
 .wrapper{
     height: 300px;
@@ -82,4 +89,9 @@ ui-carousel{
 img{
     width: 100%;
     height :100%;
+}
+
+.mat-toolbar {
+    min-height:20px;
+    max-height:40px
 }

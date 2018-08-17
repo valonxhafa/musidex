@@ -9,10 +9,13 @@
   <mat-sidenav-content>
 
     <mat-toolbar color="primary" role="header">
-        <input routerLink="" width="50px" type="image" src="../assets/images/customlogo.png" alt="Musidex logo" style='margin-right: 20px;'/>
-      <p>MUSIDEX</p>
+        <button mat-icon-button (click)="sidenav.toggle()"><mat-icon>menu</mat-icon></button>
+        <!-- <input routerLink="" width="50px" type="image" src="../assets/images/customlogo.png" alt="Musidex logo"/> -->
+        <span class="title-center">
+          <b><h1>Musidex</h1></b></span>
+        
     </mat-toolbar>
-    <button mat-raised-button (click)="sidenav.toggle()">Categories</button>
+    
     <div style="text-align:center">
 
       <!-- <img width="200" alt="Angular Logo" src="./assets/images/musidex-logo.png"> -->

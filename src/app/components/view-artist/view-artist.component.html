@@ -8,12 +8,17 @@
 
 
 <div class="page-container">
-    <div class='header-container'>
+    <div class='header-container'><br>
 
         <div id="generalinfo-container" class="section-container">
-            <div class="section-header">
-                <h2><b>Passport</b></h2>
-            </div>
+                <mat-toolbar color="warn">                    
+                        <mat-toolbar-row>
+                          <span>{{artist?.artistname}}</span>
+                          <span class="example-spacer"></span>
+                          <mat-icon class="example-icon">favorite</mat-icon>
+                          <mat-icon class="example-icon">delete</mat-icon>
+                        </mat-toolbar-row>
+                </mat-toolbar>
             <div class='body-container' fxLayout="row" fxLayout.xs="column">
 
                 <div id="carousel-container" class="carousel-container" fxFlexAlign.xs="center" [ngStyle.xs]="{'width.%': 80}">
@@ -54,9 +59,12 @@
         <div class='body-container' fxLayout="row" fxLayout.xs="column">
 
             <div id="albumsa-container" class="section-container">
-                <div class="section-header">
-                    Albums
-                </div>
+                <mat-toolbar color="warn">                    
+                    <mat-toolbar-row>
+                      <span>Albums</span>
+                      <span class="example-spacer"></span>
+                    </mat-toolbar-row>
+            </mat-toolbar>
 
                 <mat-list>
                     <mat-list-item>
@@ -70,10 +78,18 @@
                 </mat-list>
             </div>
 
+            
+            <div id="albums-container" class="section-container" style="width: 2%">
+
+            </div>
+
             <div id="albums-container" class="section-container">
-                <div class="section-header">
-                    Albums
-                </div>
+                <mat-toolbar color="warn">                    
+                    <mat-toolbar-row>
+                      <span>Achievements</span>
+                      <span class="example-spacer"></span>
+                    </mat-toolbar-row>
+            </mat-toolbar>
 
                 <mat-list>
                     <mat-list-item>
