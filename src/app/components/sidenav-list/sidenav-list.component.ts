@@ -17,9 +17,10 @@ export class SidenavListComponent implements OnInit {
   numbre: number;
   tilecolor = 'lightpink';
 
+
   filterYearIconList = ['60w', '70w', '80w', '90w'];
-  filterGenreIconList = ['hiphop', 'rap', 'dance', 'jazz', 'classic', 'country',
-  'electronic', 'metal', 'punk', 'reggae', 'rock', 'usmusic'];
+  filterGenreIconList = ['Hip-hop', 'Rap', 'Dance', 'Jazz', 'Classic', 'Country',
+  'Electronic', 'Metal', 'Reggae', 'Rock', 'USmusic'];
 
   constructor(private iconRegistry: MatIconRegistry, private domSanitizer: DomSanitizer) {
   }

@@ -16,9 +16,10 @@ export class SearchArtistsComponent implements OnInit {
   private _searchArtistCtrl = new FormControl();
   artists: Artist[];
   filteredOptions: Observable<Artist[]>;
+  loading = false;
 
   constructor(public artistsService: ArtistsService, private route: ActivatedRoute) {
-    this.route.params.subscribe( params => console.log(params) );
+    // this.route.params.subscribe( params => console.log(params) );
   }
 
   ngOnInit() {
