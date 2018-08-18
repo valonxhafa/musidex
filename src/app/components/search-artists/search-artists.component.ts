@@ -32,6 +32,7 @@ export class SearchArtistsComponent implements OnInit {
     });
   }
 
+
   get searchArtistCtrl(): FormControl {
     return this._searchArtistCtrl;
   }

@@ -21,3 +21,4 @@ https://alligator.io/angular/angular-material-custom-theme/
 
 DATA MODELLING:
 https://www.youtube.com/watch?v=jm66TSlVtcc
+https://firebase.google.com/docs/firestore/manage-data/structure-data

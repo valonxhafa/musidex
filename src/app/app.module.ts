@@ -18,14 +18,16 @@ import { RouterModule, Routes } from '@angular/router';
 import { ViewArtistComponent } from './components/view-artist/view-artist.component';
 import { SidenavListComponent } from './components/sidenav-list/sidenav-list.component';
 import { UICarouselModule } from 'ui-carousel';
+import { ViewArtistAlbumsComponent } from './components/view-artist-albums/view-artist-albums.component';
 
 export const firebaseConfig = environment.firebaseConfig;
 
 const appRoutes: Routes = [
-  { path: '', component: SearchArtistsComponent },
+
   { path: 'search', component: SearchArtistsComponent },
   { path: 'artist', component: ViewArtistComponent },
   { path: 'artist/:id', component: ViewArtistComponent },
+  { path: '', component: SearchArtistsComponent }
 
   // {
   //   path: 'heroes',
@@ -44,7 +46,8 @@ const appRoutes: Routes = [
     AppComponent,
     SearchArtistsComponent,
     ViewArtistComponent,
-    SidenavListComponent
+    SidenavListComponent,
+    ViewArtistAlbumsComponent
   ],
   imports: [
     BrowserModule,

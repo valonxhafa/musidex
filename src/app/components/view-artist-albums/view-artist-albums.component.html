@@ -1,0 +1,35 @@
+<div *ngFor="let album of albums">
+    <mat-accordion class="my-headers-align" multi="false">
+        <mat-expansion-panel>
+          <mat-expansion-panel-header class="right-aligned-header">
+              <mat-panel-title>
+                <h3><i>{{album.name}}</i></h3>
+              </mat-panel-title>
+              <mat-panel-title>
+                <h5><i>Year: {{album.year}}</i></h5>
+              </mat-panel-title>
+              <mat-panel-title>
+                <!-- <h5><i>Length: {{toDigital(album.length)}}</i></h5> -->
+                <h5><i>Length: {{toDigital(album.length)}}</i></h5>
+              </mat-panel-title>
+          </mat-expansion-panel-header>
+
+          <mat-list>
+            <div *ngFor="let trackname of album.tracks; let i = index">
+                <mat-list-item>{{i+1 + '. ' + trackname}}</mat-list-item>
+                <mat-divider></mat-divider>
+            </div>
+            </mat-list>
+
+          <!-- <mat-table [dataSource]="dataSource">
+
+              <ng-container matColumnDef="name">
+                  <mat-header-cell *matHeaderCellDef> Track </mat-header-cell>
+                  <mat-cell *matCellDef="let element"> {{element.position}} </mat-cell>
+                </ng-container>
+    
+            </mat-table> -->
+
+        </mat-expansion-panel>
+    </mat-accordion>
+</div>

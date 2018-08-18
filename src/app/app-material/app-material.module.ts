@@ -9,6 +9,8 @@ import {MatGridListModule} from '@angular/material/grid-list';
 import {MatIconModule} from '@angular/material/icon';
 import {MatChipsModule} from '@angular/material/chips';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import {MatExpansionModule} from '@angular/material/expansion';
+import {MatTableModule} from '@angular/material/table';
 
 
 
@@ -27,7 +29,9 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
     MatGridListModule,
     MatIconModule,
     MatChipsModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    MatExpansionModule,
+    MatTableModule
   ],
   exports: [
     MatInputModule,
@@ -42,7 +46,9 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
     MatGridListModule,
     MatIconModule,
     MatChipsModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    MatExpansionModule,
+    MatTableModule
   ],
   declarations: []
 })
