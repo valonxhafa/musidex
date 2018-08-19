@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {Observable} from 'rxjs/Observable';
-import { AngularFireObject, AngularFireList, AngularFireDatabase } from 'angularFire2/database';
+import {BehaviorSubject} from 'rxjs/BehaviorSubject';
 import { Artist } from '../models/artist';
 import { AngularFirestore, AngularFirestoreDocument, AngularFirestoreCollection } from 'angularfire2/firestore';
 
@@ -15,12 +15,22 @@ export class ArtistsService {
   artistDocument: AngularFirestoreDocument<Artist>;
   artist: Observable<Artist>;
 
+  items$: Observable<Artist[]>;
+  sizeFilter$: BehaviorSubject<string|null>;
+
   constructor(private afs: AngularFirestore) {
 
   }
 
   public getArtists() {
-    this.artistCollection = this.afs.collection<Artist>('Artists');
+    // TODO
+    // this.artistCollection = this.afs.collection('Artists', ref => {
+    //   return ref.where('artistname', '==', 'Madonna');
+    // });
+    this.artistCollection = this.afs.collection('Artists', ref => {
+      return ref.orderBy('likes', 'desc');
+    });
+
     this.artists = this.artistCollection.snapshotChanges().map(changes => {
       return changes.map(a => {
         const data = a.payload.doc.data() as Artist;
@@ -32,20 +42,36 @@ export class ArtistsService {
     return this.artists;
   }
 
+  public getArtistsFiltered() {
+    this.artistCollection = this.afs.collection('Artists', ref => {
+      return ref.where('artistname', '==', 'Madonna');
+    });
+
+    this.artists = this.artistCollection.snapshotChanges().map(changes => {
+      return changes.map(a => {
+        const data = a.payload.doc.data() as Artist;
+        data.$key = a.payload.doc.id;
+        return data;
+      });
+    });
+
+    return this.artists;
+  }
+
+  updateLikes(artist: Artist) {
+    this.artistDocument = this.afs.doc('Artists/' + artist.$key);
+    if (artist.liked) {
+      this.artistDocument.update({likes: (artist.likes + 1), liked: true});
+    } else {
+      this.artistDocument.update({likes: (artist.likes - 1), liked: false});
+    }
+
+  }
+
   getArtist(id: any) {
     this.artistDocument = this.afs.doc('Artists/' + id);
     this.artist = this.artistDocument.valueChanges();
     return this.artist;
-    // this.artistCollection.doc(id).ref.get().then(function(doc) {
-    //   if (doc.exists) {
-    //     console.log('Document data:', doc.data());
-    //     this.artistDocument = doc.data();
-    //   } else {
-    //     console.log('No such document!');
-    //   }
-    // }).catch(function(error) {
-    //   console.log('Error getting document:', error);
-    // });
   }
 
   deleteArtist(artist: Artist) {

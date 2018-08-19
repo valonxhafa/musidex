@@ -16,6 +16,7 @@ export class SearchArtistsComponent implements OnInit {
   private _searchArtistCtrl = new FormControl();
   artists: Artist[];
   filteredOptions: Observable<Artist[]>;
+  likedB: Boolean = false;
   loading = false;
 
   constructor(public artistsService: ArtistsService, private route: ActivatedRoute) {
@@ -24,6 +25,11 @@ export class SearchArtistsComponent implements OnInit {
 
   ngOnInit() {
     this.getArtists();
+  }
+
+  liked (artist: Artist) {
+    artist.liked = !artist.liked;
+    this.artistsService.updateLikes(artist);
   }
 
   getArtists() {

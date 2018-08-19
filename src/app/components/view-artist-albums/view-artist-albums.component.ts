@@ -12,8 +12,6 @@ import {MatTableDataSource} from '@angular/material';
 export class ViewArtistAlbumsComponent implements OnInit {
 
   albums: Album[];
-  columnsToDisplay = ['name', 'length'];
-  dataSource = new MatTableDataSource(this.albums);
 
   constructor(public albumService: AlbumsService) { }
 

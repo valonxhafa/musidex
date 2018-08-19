@@ -18,11 +18,11 @@ export class ViewArtistComponent implements OnInit {
   private sub: any;
   artist: Artist;
   albums: Album[];
+  now = new Date();
 
   constructor(public artistsService: ArtistsService, public albumService: AlbumsService, private route: ActivatedRoute) { }
 
   ngOnInit() {
-
     this.sub = this.route.params.subscribe(params => {
       this.id = params['id']; });
     this.getArtist();
@@ -39,6 +39,9 @@ export class ViewArtistComponent implements OnInit {
     this.albumService.getAlbums().subscribe(res => {
       this.albums =  res;
     });
+  }
+
+  getAge() {
   }
 
   checkArtistBeforeImgUrl() {

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { MatIconRegistry, MatIconModule } from '@angular/material/icon';
 import { DomSanitizer } from '@angular/platform-browser';
 
@@ -22,10 +22,16 @@ export class SidenavListComponent implements OnInit {
   filterGenreIconList = ['Hip-hop', 'Rap', 'Dance', 'Jazz', 'Classic', 'Country',
   'Electronic', 'Metal', 'Reggae', 'Rock', 'USmusic'];
 
+  @Output() eventClicked = new EventEmitter<Event>();
+
   constructor(private iconRegistry: MatIconRegistry, private domSanitizer: DomSanitizer) {
   }
 
   ngOnInit() {
+  }
+
+  onClick(event: Event): void {
+    this.eventClicked.emit(event);
   }
 
   go() {

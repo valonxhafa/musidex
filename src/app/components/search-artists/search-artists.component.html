@@ -1,6 +1,16 @@
 <div class="loading-indicator">
   <mat-progress-spinner mode="indeterminate" color="accent" *ngIf="loading"></mat-progress-spinner>
 </div>
+<!-- <form class="example-form">
+  <mat-form-field class="example-full-width">
+    <input type="text" placeholder="Pick one" aria-label="Number" matInput [formControl]="searchArtistCtrl" [matAutocomplete]="auto">
+    <mat-autocomplete #auto="matAutocomplete">
+      <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+        {{ option }}
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>
+</form> -->
 <form class="example-form">
   <img width="30px" src="./../../../assets/images/search.png">
     <mat-form-field class="example-full-width">
@@ -17,31 +27,25 @@
   <div *ngFor="let artist of artists">
     <mat-card class="example-card" tabindex="0">
       <mat-card-header>
-        <!--<div mat-card-avatar class="example-header-image"></div>-->
         <mat-card-title><b>{{artist.artistname}}</b></mat-card-title>
-        <!-- <mat-card-subtitle>{{artist.forname}} {{artist.name}}</mat-card-subtitle> -->
       </mat-card-header>
       <img mat-card-image src="{{artist.imgurl}}" alt="{{artist.name}}">
       <mat-card-content>
         <p align="left">
           {{artist.shortdescription}}
         </p>
-        <!-- <mat-chip-list>
-            <mat-chip color="warning">#Rap</mat-chip>
-            <mat-chip color="primary">#Klaasic</mat-chip>
-            <mat-chip color="accent">#Pop</mat-chip>
-        </mat-chip-list> -->
-        
       </mat-card-content>
       <mat-divider></mat-divider>
       <mat-card-actions>
-        <!-- <a mat-stroked-button routerLink="/artist" routerLinkActive="active" style="margin-right:50px">Bio</a> -->
         <button mat-icon-button>
-            <mat-icon aria-label="Heart icon" color="accent">favorite</mat-icon>
+            <mat-icon (click)="liked(artist)" aria-label="Heart icon" color="accent">
+               <span *ngIf="artist.liked;else notFilled">favorite</span>
+              <ng-template #notFilled>favorite_border</ng-template>
+            </mat-icon>
         </button>
 
         <button mat-icon-button>
-            <mat-icon aria-label="Heart icon">star</mat-icon>
+            <mat-icon aria-label="Favorite icon">star</mat-icon>
         </button>
 
         <button mat-icon-button>

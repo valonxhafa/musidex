@@ -11,11 +11,6 @@
     margin : 2% 0%;
 }
 
-.show-info-right {
-    position: right;
-}
-
-
 .carousel-container {
     width : 25%;
     margin: 2% 0%;
@@ -52,6 +47,10 @@ ui-carousel{
     line-height: 300px;
     font-size: 40px;
     color: #fff;
+}
+
+.chipGenreColor{
+    color: accent;
 }
 
 .button{
