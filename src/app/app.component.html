@@ -1,32 +1,26 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<mat-sidenav-container class="example-container">
 
-  <mat-sidenav #sidenav mode="side" [(opened)]="opened">
+<div class="example-container" [class.example-is-mobile]="mobileQuery.matches">
+
+<mat-toolbar color="primary" role="header" class="example-toolbar">
+    <button mat-icon-button style="width: 40px; height: auto; margin: 0px;" (click)="snav.toggle()"><mat-icon>menu</mat-icon></button>
+    <span class="title-center"><b><h1>Musidex</h1></b></span>
+    <input routerLink="" width="50px" type="image" src="../assets/images/customlogo.png" alt="Musidex logo"/>
+</mat-toolbar>
+
+<mat-sidenav-container class="example-sidenav-container" [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
+
+  <mat-sidenav #snav [mode]="mobileQuery.matches ? 'over' : 'side'"
+  [fixedInViewport]="mobileQuery.matches" fixedTopGap="56">
       <app-sidenav-list></app-sidenav-list>
   </mat-sidenav>
 
-
-
   <mat-sidenav-content>
-
-    <mat-toolbar color="primary" role="header">
-        <button mat-icon-button style="width: 40px; height: auto; margin: 0px;" (click)="sidenav.toggle()"><mat-icon>menu</mat-icon></button>
-
-        <span class="title-center"><b><h1>Musidex</h1></b></span>
-        <input routerLink="" width="50px" type="image" src="../assets/images/customlogo.png" alt="Musidex logo"/>
-      
-    </mat-toolbar>
     <div style="text-align:center">
-
-      <!-- <img width="200" alt="Angular Logo" src="./assets/images/musidex-logo.png"> -->
 
       <router-outlet>
       </router-outlet>
-
     </div>
-
-
-
   </mat-sidenav-content>
 
 </mat-sidenav-container>
+</div>

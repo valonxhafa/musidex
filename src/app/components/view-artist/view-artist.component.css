@@ -42,6 +42,11 @@
 ui-carousel{
     display: block;
 }
+
+.abc {
+    padding: 0;
+}
+
 .text{
     text-align:  center;
     line-height: 300px;

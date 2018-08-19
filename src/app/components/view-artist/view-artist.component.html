@@ -46,17 +46,17 @@
                                 </div>
             
                             </div>
-                            <div id="general-container" class="section-container general-container" style="width: 50%">
+                            <div id="general-container" class="section-container general-container" style="width: 65%">
                                     <mat-list *ngIf="artist">
-                                        <mat-list-item>
-                                            <p>{{artist.artistname}}</p> 
+                                        <mat-list-item class="abc">
+                                            {{artist.artistname}}
                                         </mat-list-item>
                                         <mat-divider></mat-divider>
                                         <mat-list-item>{{artist.forname}} {{artist.name}} </mat-list-item>
                                         <mat-divider></mat-divider>
-                                        <mat-list-item>{{getAge()}} 50 / {{artist.height}} cm </mat-list-item>
+                                        <mat-list-item>{{getAge()}} 50 years / {{artist.height}} cm </mat-list-item>
                                         <mat-divider></mat-divider>
-                                        <mat-list-item> 
+                                        <mat-list-item>
                                             <p *ngFor="let genre of artist.genres">
                                                 <mat-chip color="accent" style="margin-right: 5px" selected="true">{{genre}}</mat-chip>
                                             </p>
