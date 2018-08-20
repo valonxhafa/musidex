@@ -1,18 +1,19 @@
 <div class="loading-indicator">
   <mat-progress-spinner mode="indeterminate" color="accent" *ngIf="loading"></mat-progress-spinner>
+</div >
+<div fxLayout="row" fxLayoutGap="5px" fxLayoutWrap fxLayoutAlign="center" style="margin-top: 5%">
+  <img width="30px" height="30px" style="margin-top:50px" src="./../../../assets/images/search.png">
+  <mat-input-container>
+  <input matInput placeholder="Search" [matAutocomplete]="auto" [formControl]="_searchArtistCtrl">
+  </mat-input-container>
+  <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
+    <mat-option *ngFor="let artist of filteredArtists | async" [value]="artist">
+      {{ artist.artistname }}
+    </mat-option>
+  </mat-autocomplete>
 </div>
 
-<img width="30px" src="./../../../assets/images/search.png">
-<mat-input-container>
-  
-  <input matInput placeholder="Search" [matAutocomplete]="auto" [formControl]="_searchArtistCtrl">
-</mat-input-container>
 
-<mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
-  <mat-option *ngFor="let artist of filteredArtists | async" [value]="artist">
-    {{ artist.artistname }}
-  </mat-option>
-</mat-autocomplete>
 
 <div id="card-container" fxLayout="row" fxLayoutWrap fxLayoutGap="2%" fxLayoutAlign="center" fxLayout.xs="column">
   <div *ngFor="let artist of artists">

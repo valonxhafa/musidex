@@ -13,8 +13,8 @@
         <div id="generalinfo-container" class="section-container">
 
             <div class='body-container' fxLayout="row" fxLayout.xs="column">
-                <div id="carousel-container" class="carousel-container" fxFlexAlign.xs="center" [ngStyle.xs]="{'width.%': 80}">
-                    <ui-carousel style="border-radius: 20px" [autoPlay]="false" [infinite]="true" [fade]="false" [speed]="1500" height="250px" width="100%">
+                <div id="carousel-container" class="carousel-container" fxFlexAlign.xs="center" [ngStyle.xs]="{'width.%': 80}" [ngStyle.lg]="{'margin-right.px': 10}">
+                    <ui-carousel style="border-radius: 20px" [autoPlay]="true" [infinite]="true" [fade]="true" [speed]="4000" height="200px" width="100%">
                         <ui-carousel-item *ngFor="let a of artist.imgurl">
                             <img src="{{a}}" alt="" draggable="false" >
                         </ui-carousel-item>
@@ -22,7 +22,7 @@
                 </div>
 
                 <div fxLayout="row" style="width:100%">
-                        <div id="general-container" class="section-container general-container" style="width: 35%">
+                        <div id="general-container" class="section-container general-container" style="width: 40%">
                                 <mat-list *ngIf="artist">
                                     <mat-list-item>
                                         <p>Artist name:</p> 
@@ -39,8 +39,8 @@
             
                                 </div>
             
-                            </div>
-                            <div id="general-container" class="section-container general-container" style="width: 65%">
+                        </div>
+                            <div id="general-container" class="section-container general-container" style="width: 60%">
                                     <mat-list *ngIf="artist">
                                         <mat-list-item class="abc">
                                             {{artist.artistname}}
@@ -56,12 +56,7 @@
                                             </p>
                                         </mat-list-item> 
                                       </mat-list>
-                
-                                    <div>
-                
-                                    </div>
-                
-                        </div>
+                            </div>
                 </div>
 
             </div>
