@@ -15,14 +15,8 @@
             <div class='body-container' fxLayout="row" fxLayout.xs="column">
                 <div id="carousel-container" class="carousel-container" fxFlexAlign.xs="center" [ngStyle.xs]="{'width.%': 80}">
                     <ui-carousel style="border-radius: 20px" [autoPlay]="false" [infinite]="true" [fade]="false" [speed]="1500" height="250px" width="100%">
-                        <ui-carousel-item>
-                            <img src="{{artist?.imgurl}}" alt="" draggable="false" >
-                        </ui-carousel-item>
-                        <ui-carousel-item>
-                            <img src="{{artist?.imgurl}}" alt="" draggable="false">
-                        </ui-carousel-item>
-                        <ui-carousel-item>
-                            <img src="{{artist?.imgurl}}" alt="" draggable="false">
+                        <ui-carousel-item *ngFor="let a of artist.imgurl">
+                            <img src="{{a}}" alt="" draggable="false" >
                         </ui-carousel-item>
                     </ui-carousel>
                 </div>
@@ -34,7 +28,7 @@
                                         <p>Artist name:</p> 
                                     </mat-list-item>
                                     <mat-divider></mat-divider>
-                                    <mat-list-item>Full name </mat-list-item>
+                                    <mat-list-item>Full name: </mat-list-item>
                                     <mat-divider></mat-divider>
                                     <mat-list-item>Age / Height:</mat-list-item>
                                     <mat-divider></mat-divider>

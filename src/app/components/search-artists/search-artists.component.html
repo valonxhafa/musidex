@@ -1,27 +1,18 @@
 <div class="loading-indicator">
   <mat-progress-spinner mode="indeterminate" color="accent" *ngIf="loading"></mat-progress-spinner>
 </div>
-<!-- <form class="example-form">
-  <mat-form-field class="example-full-width">
-    <input type="text" placeholder="Pick one" aria-label="Number" matInput [formControl]="searchArtistCtrl" [matAutocomplete]="auto">
-    <mat-autocomplete #auto="matAutocomplete">
-      <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
-        {{ option }}
-      </mat-option>
-    </mat-autocomplete>
-  </mat-form-field>
-</form> -->
-<form class="example-form">
-  <img width="30px" src="./../../../assets/images/search.png">
-    <mat-form-field class="example-full-width">
-      <input type="text" placeholder="Search an artist" aria-label="Number" matInput [formControl]="searchArtistCtrl" [matAutocomplete]="auto">
-      <mat-autocomplete #auto="matAutocomplete">
-        <mat-option *ngFor="let artist of artists" [value]="artist">
-          {{artist.artistname}}
-        </mat-option>
-      </mat-autocomplete>
-    </mat-form-field>
-</form>
+
+<img width="30px" src="./../../../assets/images/search.png">
+<mat-input-container>
+  
+  <input matInput placeholder="Search" [matAutocomplete]="auto" [formControl]="_searchArtistCtrl">
+</mat-input-container>
+
+<mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
+  <mat-option *ngFor="let artist of filteredArtists | async" [value]="artist">
+    {{ artist.artistname }}
+  </mat-option>
+</mat-autocomplete>
 
 <div id="card-container" fxLayout="row" fxLayoutWrap fxLayoutGap="2%" fxLayoutAlign="center" fxLayout.xs="column">
   <div *ngFor="let artist of artists">
@@ -29,7 +20,7 @@
       <mat-card-header>
         <mat-card-title><b>{{artist.artistname}}</b></mat-card-title>
       </mat-card-header>
-      <img mat-card-image src="{{artist.imgurl}}" alt="{{artist.name}}">
+      <img mat-card-image src="{{artist.imgurl[0]}}" alt="{{artist.name}}">
       <mat-card-content>
         <p align="left">
           {{artist.shortdescription}}

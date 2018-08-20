@@ -7,7 +7,7 @@ export class Artist {
     liked?: boolean;
     likes?: number;
     name?: string;
-    imgurl?: string;
+    imgurl?: string[];
     shortdescription?: string;
     genres?: string [];
 }

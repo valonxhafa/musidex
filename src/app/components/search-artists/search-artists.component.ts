@@ -3,8 +3,10 @@ import 'rxjs/add/operator/map';
 import { FormControl } from '@angular/forms';
 import { ArtistsService } from '../../services/artists.service';
 import { Artist } from '../../models/artist';
-import {Observable} from 'rxjs/Observable';
-import {ActivatedRoute} from '@angular/router';
+import { Observable } from 'rxjs/Observable';
+import { ActivatedRoute } from '@angular/router';
+import { startWith } from 'rxjs/operators/startWith';
+import { map } from 'rxjs/operators/map';
 
 @Component({
   selector: 'app-search-artists',
@@ -13,21 +15,48 @@ import {ActivatedRoute} from '@angular/router';
   providers: [ArtistsService]
 })
 export class SearchArtistsComponent implements OnInit {
-  private _searchArtistCtrl = new FormControl();
+  _searchArtistCtrl: FormControl = new FormControl();
   artists: Artist[];
-  filteredOptions: Observable<Artist[]>;
+  filteredArtists: Observable<Artist[]>;
   likedB: Boolean = false;
   loading = false;
-
-  constructor(public artistsService: ArtistsService, private route: ActivatedRoute) {
-    // this.route.params.subscribe( params => console.log(params) );
-  }
 
   ngOnInit() {
     this.getArtists();
   }
 
-  liked (artist: Artist) {
+  constructor(public artistsService: ArtistsService, private route: ActivatedRoute) {
+    this.filteredArtists = this._searchArtistCtrl.valueChanges
+      .pipe(
+        startWith(null),
+        map(artistname => this.filterStates(artistname))
+      );
+  }
+  // this.route.params.subscribe( params => console.log(params) );
+
+
+  filterStates(val: string) {
+    return val ? this.artists.filter(s => s.artistname.toLowerCase().indexOf(val.toLowerCase()) === 0)
+      : this.artists;
+  }
+
+  displayFn(val: Artist) {
+    return val ? val.artistname : val;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+  liked(artist: Artist) {
     artist.liked = !artist.liked;
     this.artistsService.updateLikes(artist);
   }
