@@ -23,12 +23,10 @@ export class ArtistsService {
   }
 
   public getArtists() {
-    // TODO
-    // this.artistCollection = this.afs.collection('Artists', ref => {
-    //   return ref.where('artistname', '==', 'Madonna');
-    // });
+
     this.artistCollection = this.afs.collection('Artists', ref => {
       return ref.orderBy('likes', 'desc');
+    // return ref.where('artistname', '==', 'Madonna');
     });
 
     this.artists = this.artistCollection.snapshotChanges().map(changes => {

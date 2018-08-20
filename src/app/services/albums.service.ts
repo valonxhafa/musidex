@@ -18,7 +18,12 @@ export class AlbumsService {
   }
 
   public getAlbums() {
-    this.albumCollection = this.afs.collection<Album>('Albums');
+
+    this.albumCollection = this.afs.collection<Album>('Albums', ref => {
+      return ref.where('name', '==' , 'Dangerous');
+    });
+
+    // this.albumCollection = this.afs.collection<Album>('Albums');
     this.albums = this.albumCollection.snapshotChanges().map(changes => {
       return changes.map(a => {
         const data = a.payload.doc.data() as Album;
@@ -26,7 +31,6 @@ export class AlbumsService {
         return data;
       });
     });
-
     return this.albums;
   }
 

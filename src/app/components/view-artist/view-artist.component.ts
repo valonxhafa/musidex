@@ -38,6 +38,7 @@ export class ViewArtistComponent implements OnInit {
   getAlbums() {
     this.albumService.getAlbums().subscribe(res => {
       this.albums =  res;
+      console.log(res);
     });
   }
 
