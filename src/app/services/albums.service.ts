@@ -17,10 +17,10 @@ export class AlbumsService {
   constructor(private afs: AngularFirestore) {
   }
 
-  public getAlbums() {
+  public getAlbums(id: string) {
 
     this.albumCollection = this.afs.collection<Album>('Albums', ref => {
-      return ref.where('name', '==' , 'Dangerous');
+      return ref.where('artistID', '==' , id);
     });
 
     // this.albumCollection = this.afs.collection<Album>('Albums');

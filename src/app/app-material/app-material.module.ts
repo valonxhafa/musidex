@@ -11,6 +11,7 @@ import {MatChipsModule} from '@angular/material/chips';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatExpansionModule} from '@angular/material/expansion';
 import {MatTableModule} from '@angular/material/table';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 
 
@@ -31,7 +32,8 @@ import {MatTableModule} from '@angular/material/table';
     MatChipsModule,
     MatProgressSpinnerModule,
     MatExpansionModule,
-    MatTableModule
+    MatTableModule,
+    MatSnackBarModule
   ],
   exports: [
     MatInputModule,
@@ -48,7 +50,8 @@ import {MatTableModule} from '@angular/material/table';
     MatChipsModule,
     MatProgressSpinnerModule,
     MatExpansionModule,
-    MatTableModule
+    MatTableModule,
+    MatSnackBarModule
   ],
   declarations: []
 })

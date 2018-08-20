@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AlbumsService } from '../../services/albums.service';
 import { Album } from '../../models/album';
 import {MatTableDataSource} from '@angular/material';
+import {ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'app-view-artist-albums',
@@ -12,16 +13,22 @@ import {MatTableDataSource} from '@angular/material';
 export class ViewArtistAlbumsComponent implements OnInit {
 
   albums: Album[];
+  private sub: any;
+  id: string;
 
-  constructor(public albumService: AlbumsService) { }
+
+  constructor(public albumService: AlbumsService, private route: ActivatedRoute) { }
 
   ngOnInit() {
-    this.getAlbums();
+    this.sub = this.route.params.subscribe(params => {
+      this.id = params['id']; });
+    this.getAlbums(this.id);
+    console.log(this.id);
     // this.albumService.addAlbums(); //VOEG TEST ALBUMS TOE
   }
 
-  getAlbums() {
-    this.albumService.getAlbums().subscribe(res => {
+  getAlbums(id: string) {
+    this.albumService.getAlbums(id).subscribe(res => {
       this.albums = res;
     });
   }

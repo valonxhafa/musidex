@@ -7,6 +7,8 @@ import { Observable } from 'rxjs/Observable';
 import { ActivatedRoute } from '@angular/router';
 import { startWith } from 'rxjs/operators/startWith';
 import { map } from 'rxjs/operators/map';
+import {MatSnackBar} from '@angular/material';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-search-artists',
@@ -25,7 +27,7 @@ export class SearchArtistsComponent implements OnInit {
     this.getArtists();
   }
 
-  constructor(public artistsService: ArtistsService, private route: ActivatedRoute) {
+  constructor(public artistsService: ArtistsService, private route: ActivatedRoute, public snackBar: MatSnackBar, private router: Router) {
     this.filteredArtists = this._searchArtistCtrl.valueChanges
       .pipe(
         startWith(null),
@@ -34,9 +36,16 @@ export class SearchArtistsComponent implements OnInit {
   }
   // this.route.params.subscribe( params => console.log(params) );
 
+  searchArtist(artist: Artist) {
+    this.router.navigate(['artist', { id: artist.$key}]);
+  }
+
+  openSnackBar() {
+    this.snackBar.open('Added to favorites!', '', { duration: 1000});
+  }
 
   filterStates(val: string) {
-    return val ? this.artists.filter(s => s.artistname.toLowerCase().indexOf(val.toLowerCase()) === 0)
+    return val ? this.artists.filter(s => s.artistname.toLowerCase().indexOf(val.toString().toLowerCase()) === 0)
       : this.artists;
   }
 

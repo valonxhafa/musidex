@@ -16,7 +16,7 @@ export class ViewArtistComponent implements OnInit {
 
   id: string;
   private sub: any;
-  artist: Artist;
+  artist: Artist = new Artist();
   albums: Album[];
   now = new Date();
 
@@ -26,19 +26,11 @@ export class ViewArtistComponent implements OnInit {
     this.sub = this.route.params.subscribe(params => {
       this.id = params['id']; });
     this.getArtist();
-    this.getAlbums();
   }
 
   getArtist() {
     this.artistsService.getArtist(this.id).subscribe(res => {
       this.artist = res;
-    });
-  }
-
-  getAlbums() {
-    this.albumService.getAlbums().subscribe(res => {
-      this.albums =  res;
-      console.log(res);
     });
   }
 

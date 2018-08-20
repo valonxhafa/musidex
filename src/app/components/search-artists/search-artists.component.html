@@ -6,14 +6,12 @@
   <mat-input-container>
   <input matInput placeholder="Search" [matAutocomplete]="auto" [formControl]="_searchArtistCtrl">
   </mat-input-container>
-  <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
+  <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn" (optionSelected)='searchArtist($event.option.value)'>
     <mat-option *ngFor="let artist of filteredArtists | async" [value]="artist">
       {{ artist.artistname }}
     </mat-option>
   </mat-autocomplete>
 </div>
-
-
 
 <div id="card-container" fxLayout="row" fxLayoutWrap fxLayoutGap="2%" fxLayoutAlign="center" fxLayout.xs="column">
   <div *ngFor="let artist of artists">
@@ -37,7 +35,7 @@
         </button>
 
         <button mat-icon-button>
-            <mat-icon aria-label="Favorite icon">star</mat-icon>
+            <mat-icon (click)="openSnackBar()" aria-label="Favorite icon">star</mat-icon>
         </button>
 
         <button mat-icon-button>

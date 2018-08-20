@@ -23,11 +23,11 @@ import { ViewArtistAlbumsComponent } from './components/view-artist-albums/view-
 export const firebaseConfig = environment.firebaseConfig;
 
 const appRoutes: Routes = [
-
+  { path: '', component: SearchArtistsComponent },
   { path: 'search', component: SearchArtistsComponent },
   { path: 'artist', component: ViewArtistComponent },
   { path: 'artist/:id', component: ViewArtistComponent },
-  { path: '', component: SearchArtistsComponent }
+
 
   // {
   //   path: 'heroes',
