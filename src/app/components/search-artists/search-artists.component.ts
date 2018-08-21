@@ -34,7 +34,6 @@ export class SearchArtistsComponent implements OnInit {
         map(artistname => this.filterStates(artistname))
       );
   }
-  // this.route.params.subscribe( params => console.log(params) );
 
   searchArtist(artist: Artist) {
     this.router.navigate(['artist', { id: artist.$key}]);

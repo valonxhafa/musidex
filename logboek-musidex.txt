@@ -18,6 +18,7 @@ https://blog.angular-university.io/angular-app-shell/
 https://medium.com/@owencm/designing-great-uis-for-progressive-web-apps-dd38c1d20f7
 https://material.angular.io/
 https://alligator.io/angular/angular-material-custom-theme/
+https://firebase.googleblog.com/2018/08/better-arrays-in-cloud-firestore.html
 
 DATA MODELLING:
 https://www.youtube.com/watch?v=jm66TSlVtcc

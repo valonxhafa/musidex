@@ -23,7 +23,6 @@ export class ViewArtistAlbumsComponent implements OnInit {
     this.sub = this.route.params.subscribe(params => {
       this.id = params['id']; });
     this.getAlbums(this.id);
-    console.log(this.id);
     // this.albumService.addAlbums(); //VOEG TEST ALBUMS TOE
   }
 

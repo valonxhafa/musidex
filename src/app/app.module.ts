@@ -19,6 +19,7 @@ import { ViewArtistComponent } from './components/view-artist/view-artist.compon
 import { SidenavListComponent } from './components/sidenav-list/sidenav-list.component';
 import { UICarouselModule } from 'ui-carousel';
 import { ViewArtistAlbumsComponent } from './components/view-artist-albums/view-artist-albums.component';
+import { ViewArtistGroupsComponent } from './components/view-artist-groups/view-artist-groups.component';
 
 export const firebaseConfig = environment.firebaseConfig;
 
@@ -47,7 +48,8 @@ const appRoutes: Routes = [
     SearchArtistsComponent,
     ViewArtistComponent,
     SidenavListComponent,
-    ViewArtistAlbumsComponent
+    ViewArtistAlbumsComponent,
+    ViewArtistGroupsComponent
   ],
   imports: [
     BrowserModule,

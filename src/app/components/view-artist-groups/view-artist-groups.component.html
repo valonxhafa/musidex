@@ -1,0 +1,28 @@
+<div *ngFor="let group of groups">
+  <mat-accordion class="my-headers-align" multi="false">
+      <mat-expansion-panel>
+        <mat-expansion-panel-header class="right-aligned-header">
+            <mat-panel-title>
+              <h3><i>{{group.name}}</i></h3>
+            </mat-panel-title>
+        </mat-expansion-panel-header>
+
+        <mat-list>
+          <div *ngFor="let member of group.members; let i = index">
+              <mat-list-item>{{i+1 + '. ' + member}}</mat-list-item>
+              <mat-divider></mat-divider>
+          </div>
+          </mat-list>
+
+        <!-- <mat-table [dataSource]="dataSource">
+
+            <ng-container matColumnDef="name">
+                <mat-header-cell *matHeaderCellDef> Track </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.position}} </mat-cell>
+              </ng-container>
+  
+          </mat-table> -->
+
+      </mat-expansion-panel>
+  </mat-accordion>
+</div>

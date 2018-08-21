@@ -2,6 +2,7 @@ export class Artist {
     $key?: string;
     artistname?: string;
     birthdate?: Date;
+    died?: Date;
     forname?: string;
     height?: number;
     liked?: boolean;

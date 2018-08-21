@@ -16,7 +16,7 @@ export class ViewArtistComponent implements OnInit {
 
   id: string;
   private sub: any;
-  artist: Artist = new Artist();
+  artist: Artist;
   albums: Album[];
   now = new Date();
 
