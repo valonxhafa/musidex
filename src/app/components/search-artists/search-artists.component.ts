@@ -39,8 +39,8 @@ export class SearchArtistsComponent implements OnInit {
     this.router.navigate(['artist', { id: artist.$key}]);
   }
 
-  openSnackBar() {
-    this.snackBar.open('Added to favorites!', '', { duration: 1000});
+  openSnackBar(artistname: string) {
+    this.snackBar.open(artistname + ' added to favorites!', '', { duration: 1000});
   }
 
   filterStates(val: string) {

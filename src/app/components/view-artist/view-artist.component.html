@@ -1,12 +1,3 @@
-<!-- <ui-carousel >
-        <ui-carousel-item>
-    <img style="height: 300px;" src="{{artist.imgurl}}" alt="{{artist.name}}">
-        </ui-carousel-item>
-</ui-carousel> -->
-
-
-
-
 <div class="page-container">
     <div class='header-container'><br>
 
@@ -51,9 +42,12 @@
                                         <mat-list-item>{{getAge()}} 50 years / {{artist.height}} cm </mat-list-item>
                                         <mat-divider></mat-divider>
                                         <mat-list-item>
-                                            <p *ngFor="let genre of artist.genres">
-                                                <mat-chip color="accent" style="margin-right: 5px" selected="true">{{genre}}</mat-chip>
-                                            </p>
+                                            <mat-chip-list>
+                                                    <p *ngFor="let genre of artist.genres">
+                                                            <mat-chip color="accent" style="margin-right: 5px" selected="true">{{genre}}</mat-chip>
+                                                        </p>
+                                            </mat-chip-list>
+
                                         </mat-list-item> 
                                       </mat-list>
                             </div>
@@ -61,7 +55,7 @@
 
             </div>
 
-        </div>
+        </div>  
 
         <div class='body-container' fxLayout="row" fxLayout.xs="column">
 

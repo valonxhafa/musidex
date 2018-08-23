@@ -39,10 +39,6 @@
     margin: 0 auto;
 }
 
-ui-carousel{
-    display: block;
-}
-
 .abc {
     padding: 0;
 }
@@ -54,9 +50,6 @@ ui-carousel{
     color: #fff;
 }
 
-.chipGenreColor{
-    color: accent;
-}
 
 .button{
     user-select: none;
