@@ -52,18 +52,6 @@ export class SearchArtistsComponent implements OnInit {
     return val ? val.artistname : val;
   }
 
-
-
-
-
-
-
-
-
-
-
-
-
   liked(artist: Artist) {
     artist.liked = !artist.liked;
     this.artistsService.updateLikes(artist);
