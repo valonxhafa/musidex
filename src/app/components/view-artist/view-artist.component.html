@@ -7,7 +7,7 @@
                 <div id="carousel-container" class="carousel-container" fxFlexAlign.xs="center" [ngStyle.xs]="{'width.%': 80}" [ngStyle.lg]="{'margin-right.px': 10}">
                     <ui-carousel style="border-radius: 20px" [autoPlay]="false" [infinite]="true" [fade]="true" [speed]="3000" height="200px" width="100%">
                         <ui-carousel-item *ngFor="let a of artist.imgurl">
-                            <img src="{{a}}" alt="" draggable="false" >
+                            <img alt="artist carousel" src="{{a}}" alt="" draggable="false" >
                         </ui-carousel-item>
                     </ui-carousel>
                 </div>

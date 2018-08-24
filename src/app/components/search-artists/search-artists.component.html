@@ -20,7 +20,7 @@
       <mat-card-header>
         <mat-card-title><b>{{artist.artistname}}</b></mat-card-title><span *ngIf="artist.died">RIP</span>
       </mat-card-header>
-      <img mat-card-image src="{{artist.imgurl[0]}}" alt="{{artist.name}}">
+      <img alt="picture of an artist" mat-card-image src="{{artist.imgurl[0]}}" alt="{{artist.name}}">
       <mat-card-content>
         <p align="left">
           {{artist.shortdescription}}
