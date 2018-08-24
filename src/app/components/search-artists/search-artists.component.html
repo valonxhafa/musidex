@@ -1,10 +1,10 @@
 <div class="loading-indicator">
   <mat-progress-spinner mode="indeterminate" color="accent" *ngIf="loading"></mat-progress-spinner>
 </div >
-<div fxLayout="row" fxLayoutGap="5px" fxLayoutWrap fxLayoutAlign="center" style="margin-top: 5%">
-  <img width="30px" height="30px" style="margin-top:50px" src="./../../../assets/images/search.png">
+<div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="center" style="margin-top: 5%">
+  <img alt="search" width="30px" height="30px" style="margin-top:50px" src="./../../../assets/images/search.png">
   <mat-input-container>
-  <input matInput placeholder="Search" [matAutocomplete]="auto" [formControl]="_searchArtistCtrl">
+  <input matInput placeholder="Search for an artist" [matAutocomplete]="auto" [formControl]="_searchArtistCtrl">
   </mat-input-container>
   <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn" (optionSelected)='searchArtist($event.option.value)'>
     <mat-option *ngFor="let artist of filteredArtists | async" [value]="artist">
@@ -14,11 +14,11 @@
   </mat-autocomplete>
 </div>
 
-<div id="card-container" fxLayout="row" fxLayoutWrap fxLayoutGap="2%" fxLayoutAlign="center" fxLayout.xs="column">
+<div id="card-container" fxLayout="row" fxLayoutWrap fxLayoutGap="3%" fxLayoutAlign="center" fxLayout.xs="column">
   <div *ngFor="let artist of artists">
     <mat-card class="example-card" tabindex="0">
       <mat-card-header>
-        <mat-card-title><b>{{artist.artistname}}</b></mat-card-title><span *ngIf="artist.died">RIP</span>
+        <mat-card-title><b>{{artist.artistname}}</b></mat-card-title><span *ngIf="artist.died"></span>
       </mat-card-header>
       <img alt="picture of an artist" mat-card-image src="{{artist.imgurl[0]}}" alt="{{artist.name}}">
       <mat-card-content>

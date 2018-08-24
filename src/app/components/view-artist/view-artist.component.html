@@ -43,9 +43,9 @@
                                         <mat-divider></mat-divider>
                                         <mat-list-item>
                                             <mat-chip-list>
-                                                    <p *ngFor="let genre of artist.genres">
-                                                            <mat-chip color="accent" style="margin-right: 5px" selected="true">{{genre}}</mat-chip>
-                                                        </p>
+                                                    <div *ngFor="let genre of artist.genres">
+                                                            <mat-chip color="accent" style="margin-right: 1px" selected="true">{{genre}}</mat-chip>
+                                                    </div>
                                             </mat-chip-list>
 
                                         </mat-list-item> 

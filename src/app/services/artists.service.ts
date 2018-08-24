@@ -25,7 +25,7 @@ export class ArtistsService {
   public getArtists() {
 
     this.artistCollection = this.afs.collection('Artists', ref => {
-      return ref.orderBy('likes', 'desc');
+      return ref.orderBy('likes', 'desc').limit(8);
     // return ref.where('artistname', '==', 'Madonna');
     });
 

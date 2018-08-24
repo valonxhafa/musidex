@@ -9,7 +9,7 @@
 
 <mat-sidenav-container class="example-sidenav-container" [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
 
-  <mat-sidenav #snav [mode]="mobileQuery.matches ? 'over' : 'side'" [ngStyle.xs]="{'width.%': 30}"
+  <mat-sidenav #snav [mode]="mobileQuery.matches ? 'over' : 'side'" [ngStyle.xs]="{'width.%': 30}" [ngStyle.sm]="{'width.%': 20}" 
   [fixedInViewport]="mobileQuery.matches" fixedTopGap="56">
       <app-sidenav-list></app-sidenav-list>
   </mat-sidenav>

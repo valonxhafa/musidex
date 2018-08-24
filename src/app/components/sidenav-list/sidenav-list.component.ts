@@ -30,6 +30,9 @@ export class SidenavListComponent implements OnInit {
   ngOnInit() {
   }
 
+  filterOn(filter: string) {
+  }
+
   onClick(event: Event): void {
     this.eventClicked.emit(event);
   }
